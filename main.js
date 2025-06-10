@@ -1,5 +1,7 @@
 const input = document.getElementById('input');
 
+var interval = null;
+
 // define canvas variables
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -9,12 +11,18 @@ var height = ctx.canvas.height;
 
 var counter = 0;
 function drawWave() {
-    counter = 0
-
+    counter = 0;
+    interval = setInterval(line, 20); // runs every 20 seconds // gives interval ID attatched to variable, needed to stop interval
+    if(counter > 50) {
+        clearInterval(interval) // stops interval
+    }
+    ctx.clearRect(0, 0, width, height); // clears canvas
+    x = 0;
+    y = (height/2);
+    ctx.moveTo(x, y); // moves pointer to left, middle
+    ctx.beginPath();
 
 }
-
-
 
 
 var amplitude = 40;
@@ -23,6 +31,7 @@ function line() { //draws line for sine wave
     ctx.lineTo(x, y);
     ctx.stroke();
     x = x + 1;
+    counter++; //increases counter by 1 (to show how long interval has been run)
 }
 
 
@@ -57,7 +66,7 @@ notenames.set("B", 493.9);
 
 ///////////
 function frequency(pitch) { // plays note for 1 sec
-    freq = pitch / 10000;
+    freq = (pitch/10000);
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime); // set volume to 100 right now
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime); //set frequency to PITCH right now
     gainNode.gain.setValueAtTime(0, (audioCtx.currentTime + 1)); // set volume to 0 in 1 second
@@ -69,5 +78,6 @@ function handle() { //called when button is clicked in index.html
     gainNode.gain.value = 0; // volume = 0
     var usernotes = String(input.value); // inputted letter is now a string
     frequency(notenames.get(usernotes)); // calls frequency, PITCH is the value of USERNOTES from the Map NOTENAMES
+    drawWave();
 }
 
