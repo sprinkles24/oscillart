@@ -2,6 +2,9 @@ const input = document.getElementById('input');
 
 var interval = null;
 var amplitude = 40;
+var reset = false;
+var timepernote = 0;
+var length = 0;
 
 
 // define canvas variables
@@ -13,26 +16,29 @@ var height = ctx.canvas.height;
 
 var counter = 0;
 function drawWave() {
+    clearInterval(interval);
     counter = 0;
-    ctx.clearRect(0, 0, width, height); // clears canvas
-    x = 0;
-    y = (height/2);
-    ctx.moveTo(x, y); // moves pointer to left, middle
-    ctx.beginPath();
-    interval = setInterval(line, 20); // runs every 20 seconds // gives interval ID attatched to variable, needed to stop interval
-   
+    if (reset) {
+        ctx.clearRect(0, 0, width, height); // clears canvas
+        x = 0;
+        y = (height/2);
+        ctx.moveTo(x, y); // moves pointer to left, middle
+        ctx.beginPath();
+    }
+    interval = setInterval(line, 20); // runs every 20 milliseconds // gives interval ID attatched to variable, needed to stop interval
+    reset = false
 
 }
 
 
 function line() { //draws line for sine wave
-    var y = (height/2) + amplitude * Math.sin(2 * (Math.PI) * freq * x);
+    var y = (height/2) + amplitude * Math.sin(2 * (Math.PI) * freq * x * (0.5 * length));
     ctx.lineTo(x, y);
     ctx.stroke();
     x = x + 1;
     counter = counter + 1; //increases counter by 1 (to show how long interval has been run)
-    if(counter > 50) {
-        clearInterval(interval); // stops interval after running 50 times
+    if(counter > (timpernote/20)) {
+        clearInterval(interval); // stops interval after running timepern0te/20 times
     }
 }
 
@@ -70,15 +76,35 @@ function frequency(pitch) { // plays note for 1 sec
     freq = (pitch/10000);
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime); // set volume to 100 right now
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime); //set frequency to PITCH right now
-    gainNode.gain.setValueAtTime(0, (audioCtx.currentTime + 1)); // set volume to 0 in 1 second
+    gainNode.gain.setValueAtTime(0, (audioCtx.currentTime + (timepernote/1000) - 0.1)); // set volume to 0 in 1 second
 
 }
 
 function handle() { //called when button is clicked in index.html
+    reset = true
     audioCtx.resume(); // resumes sound
     gainNode.gain.value = 0; // volume = 0
     var usernotes = String(input.value); // inputted letter is now a string
-    frequency(notenames.get(usernotes)); // calls frequency, PITCH is the value of USERNOTES from the Map NOTENAMES
-    drawWave();
+    var noteslist = []
+    length = usernotes.length
+    timepernote = (6000 / length)
+
+    for (i = 0; i < usernotes.length; i++) {
+        noteslist.push(notenames.get(usernotes.charAt(i))) // note -> frequency, add frequency to noteslist
+    }
+
+    let j = 0;
+    repeat = setInterval(() => {
+        if (j<noteslist.length) {
+            frequency(parseInt(noteslist[j]));
+            drawWave();
+        j++
+        } else {
+            clearInterval(repeat)
+        }
+
+
+    }, timepernote)
+
 }
 
