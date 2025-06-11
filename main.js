@@ -1,39 +1,40 @@
 const input = document.getElementById('input');
 
 var interval = null;
+var amplitude = 40;
+
 
 // define canvas variables
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var width = ctx.canvas.widthl
+var width = ctx.canvas.width;
 var height = ctx.canvas.height;
 
 
 var counter = 0;
 function drawWave() {
     counter = 0;
-    interval = setInterval(line, 20); // runs every 20 seconds // gives interval ID attatched to variable, needed to stop interval
-    if(counter > 50) {
-        clearInterval(interval) // stops interval
-    }
     ctx.clearRect(0, 0, width, height); // clears canvas
     x = 0;
     y = (height/2);
     ctx.moveTo(x, y); // moves pointer to left, middle
     ctx.beginPath();
+    interval = setInterval(line, 20); // runs every 20 seconds // gives interval ID attatched to variable, needed to stop interval
+   
 
 }
 
 
-var amplitude = 40;
 function line() { //draws line for sine wave
-    var y = (height/2) + amplitude * (2 * (Math.PI) * freq * x);
+    var y = (height/2) + amplitude * Math.sin(2 * (Math.PI) * freq * x);
     ctx.lineTo(x, y);
     ctx.stroke();
     x = x + 1;
-    counter++; //increases counter by 1 (to show how long interval has been run)
+    counter = counter + 1; //increases counter by 1 (to show how long interval has been run)
+    if(counter > 50) {
+        clearInterval(interval); // stops interval after running 50 times
+    }
 }
-
 
 
 
