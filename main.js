@@ -1,7 +1,8 @@
 const input = document.getElementById('input');
+const color_picker = document.getElementById('color');
+const vol_slider = document.getElementById('vol-slider')
 
 var interval = null;
-var amplitude = 40;
 var reset = false;
 var timepernote = 0;
 var length = 0;
@@ -32,12 +33,13 @@ function drawWave() {
 
 
 function line() { //draws line for sine wave
-    var y = (height/2) + amplitude * Math.sin(2 * (Math.PI) * freq * x * (0.5 * length));
+    var y = (height/2) + vol_slider.value * Math.sin(2 * (Math.PI) * freq * x * (0.5 * length));
+    ctx.strokeStyle = color_picker.value //MAKE IT A GRADIENT (PART 4 SECTION 1 (END))
     ctx.lineTo(x, y);
     ctx.stroke();
     x = x + 1;
     counter = counter + 1; //increases counter by 1 (to show how long interval has been run)
-    if(counter > (timpernote/20)) {
+    if(counter > (timepernote/20)) {
         clearInterval(interval); // stops interval after running timepern0te/20 times
     }
 }
@@ -74,9 +76,13 @@ notenames.set("B", 493.9);
 ///////////
 function frequency(pitch) { // plays note for 1 sec
     freq = (pitch/10000);
-    gainNode.gain.setValueAtTime(100, audioCtx.currentTime); // set volume to 100 right now
+    gainNode.gain.setValueAtTime(vol_slider.value, audioCtx.currentTime); // set volume to slider value right now
+    setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1) //sets volume to slider value every 1 millisecond
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime); //set frequency to PITCH right now
-    gainNode.gain.setValueAtTime(0, (audioCtx.currentTime + (timepernote/1000) - 0.1)); // set volume to 0 in 1 second
+    setTimeout(() => { // 10 ms before timepernote:
+        clearInterval(setting); // runs SETTING (interval above)
+        gainNode.gain.value = 0; }, // sets volume to 0
+        (timepernote-10));
 
 }
 
