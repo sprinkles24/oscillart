@@ -10,19 +10,29 @@
 <body>
     
     <div id="container">
-        <canvas id="canvas">
 
-            
+        <h1>Shyla's Oscillart</h1>
+        <h2>Play music and draw fun sine waves!</h2>
+        <p>Made while following Hack Club's </p> <a href="https://jams.hackclub.com/batch/oscillart/">Oscillart Jam</a><p>!</p>
+        <br>
+        
+        <!--Canvas-->
+        <canvas id="canvas"></canvas>
 
+        <!--Start Button-->
+        <input type="text" id="input">
+        <button id="submit" onclick="handle()">Submit meeeeeeee!</button>
 
-        </canvas>
+        <!--Color Picker-->
+        <input type="color" id="color" value="#FF0000">
+
+        <!--Volume Slider-->
+        <input type="range" min="1" max="100" value="100" id="vol-slider">
+
+        <!--Recording Button-->
+        <button id="record" onclick="toggle()">Start Recording</button>
+
     </div>
-
-    <input type="text" id="input">
-    <button id="submit" onclick="handle()">Submit meeeeeeee!</button>
-
-    <input type="color" id="color" value="#FF0000"> <!--COLOR PICKER!!!-->
-    <input type="range" min="1" max="100" value="100" id="vol-slider">
 
 
     <script src="main.js"></script>

@@ -1,6 +1,7 @@
 const input = document.getElementById('input');
 const color_picker = document.getElementById('color');
-const vol_slider = document.getElementById('vol-slider')
+const vol_slider = document.getElementById('vol-slider');
+const recording_toggle = document.getElementById("record");
 
 var interval = null;
 var reset = false;
@@ -114,3 +115,47 @@ function handle() { //called when button is clicked in index.html
 
 }
 
+var blob, recorder = null;
+var chunks = [];
+
+function startRecording() {
+    const canvasStream = canvas.captureStream(20); // captures canvas every 20 frames
+    const audioDestination = audioCtx.createMediaStreamDestination();
+    gainNode.connect(audioDestination); // redirects audio to recording device (in addition to speakers)
+    const combinedStream = new MediaStream(); // audio & video data
+    canvasStream.getVideoTracks().forEach(track => combinedStream.addTrack(track)); // adds all canvas video data to combinedStream
+    audioDestination.stream.getAudioTracks().forEach(track => combinedStream.Stream.addTrack(track))
+    recorder = new MediaRecorder(combinedStream, {mimeType: 'video/webm'}); // records combinedStream as a webm
+    
+    recorder.ondataavailable = e => {
+        if (e.data.size > 0) {
+        chunks.push(e.data);
+        }
+    }
+
+    recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'recording.webm';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    recorder.start();
+
+}
+
+
+var is_recording = false;
+function toggle() {
+    is_recording = !is_recording;
+    if (is_recording) {
+        recording_toggle.innerHTML = "Stop Recording";
+        startRecording();
+    } else {
+        recording_toggle.innerHTML = "Start Recording";
+        recorder.stop();
+    }
+}
