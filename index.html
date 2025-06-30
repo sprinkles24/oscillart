@@ -10,29 +10,52 @@
 <body>
     
     <div id="container">
-
+        <!--headings-->
         <h1>Shyla's Oscillart</h1>
         <h2>Play music and draw fun sine waves!</h2>
-        <p>Made while following Hack Club's </p> <a href="https://jams.hackclub.com/batch/oscillart/">Oscillart Jam</a><p>!</p>
-        <br>
-        
+        <!--hack club credit-->
+        <h3 class="jam">Made with Hack Club's </h3>
+        <a href="https://jams.hackclub.com/batch/oscillart/" target="_blank">Oscillart Jam</a>
+        <h3 class="jam">!</h3>
+
+
         <!--Canvas-->
         <canvas id="canvas"></canvas>
+        <br>
 
-        <!--Start Button-->
-        <input type="text" id="input">
-        <button id="submit" onclick="handle()">Submit meeeeeeee!</button>
+        <div class="inputThingies">
 
-        <!--Color Picker-->
-        <input type="color" id="color" value="#FF0000">
+            <!--Start Button-->
+            <div class="startButton">
+                <p>Notes: </p>
+                <input type="text" id="input">
+                <button id="submit" onclick="handle()">Start Playing</button>
+            </div>
 
-        <!--Volume Slider-->
-        <input type="range" min="1" max="100" value="100" id="vol-slider">
 
-        <!--Recording Button-->
-        <button id="record" onclick="toggle()">Start Recording</button>
+            <!--Color Picker-->
+            <div class="colorButton">
+                <input type="color" id="color" value="#FFFFFF">
+            </div>
 
-    </div>
+            <!--Volume Slider-->
+            <div class="volumeButton">
+                <p>Volume</p>
+                <input type="range" min="1" max="100" value="100" id="vol-slider">
+            </div>
+
+            <!--Recording Button-->
+            <div class="recordingButton">
+                <button id="record" onclick="toggle()">Start Recording</button>
+            </div>
+
+
+        </div> <!-- class="inputThingies"-->
+
+
+
+
+    </div> <!--div id="container" -->
 
 
     <script src="main.js"></script>

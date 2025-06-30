@@ -71,6 +71,13 @@ notenames.set("F", 349.2);
 notenames.set("G", 392);
 notenames.set("A", 440);
 notenames.set("B", 493.9);
+notenames.set("c", 261.6);
+notenames.set("d", 293.7);
+notenames.set("e", 329.6);
+notenames.set("f", 349.2);
+notenames.set("g", 392);
+notenames.set("a", 440);
+notenames.set("b", 493.9);
 
 
 
@@ -124,7 +131,7 @@ function startRecording() {
     gainNode.connect(audioDestination); // redirects audio to recording device (in addition to speakers)
     const combinedStream = new MediaStream(); // audio & video data
     canvasStream.getVideoTracks().forEach(track => combinedStream.addTrack(track)); // adds all canvas video data to combinedStream
-    audioDestination.stream.getAudioTracks().forEach(track => combinedStream.Stream.addTrack(track))
+    audioDestination.stream.getAudioTracks().forEach(track => combinedStream.addTrack(track))
     recorder = new MediaRecorder(combinedStream, {mimeType: 'video/webm'}); // records combinedStream as a webm
     
     recorder.ondataavailable = e => {

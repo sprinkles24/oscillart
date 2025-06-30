@@ -1,15 +1,47 @@
+
+
+body {
+
+    /* display: flex;*/
+    margin: auto;
+    width: 75%;
+    background-color: #3990bf;
+    text-align: center;
+
+    /* font-family: ; */
+}
+
+
 #canvas {
 
-    border: 5px solid black;
+    border: 1em solid #6abae6;
     height: 500 px;
     width: 900px;
     margin-bottom: 2em;
+    background-color: black;
+    /* display: flex; */
 
 }
 
 #container {
-
+    /* display: flex;
+    margin: auto; */
 }
- p {
-    display: inline-block
+
+.jam {
+    display: inline;
  }
+
+
+.inputThingies {
+    display: flex;
+    margin: auto
+ }
+
+
+
+ /*inputThingies
+    startButton
+    colorButton
+    volumeButton
+    */
