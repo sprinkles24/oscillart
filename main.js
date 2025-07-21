@@ -3,6 +3,8 @@ const color_picker = document.getElementById('color');
 const vol_slider = document.getElementById('vol-slider');
 const recording_toggle = document.getElementById("record");
 
+
+
 var interval = null;
 var reset = false;
 var timepernote = 0;
@@ -41,7 +43,7 @@ function line() { //draws line for sine wave
     x = x + 1;
     counter = counter + 1; //increases counter by 1 (to show how long interval has been run)
     if(counter > (timepernote/20)) {
-        clearInterval(interval); // stops interval after running timepern0te/20 times
+        clearInterval(interval); // stops interval after running timepernote/20 times
     }
 }
 
@@ -166,3 +168,29 @@ function toggle() {
         recorder.stop();
     }
 }
+
+
+
+
+//////////////////////
+function redFunction() {
+    color_picker.value="#ED5564"
+}
+function orangeFunction() {
+    color_picker.value="#FFCE54"
+}
+function yellowFunction() {
+    color_picker.value="#FFFD82"
+}
+function greenFunction() {
+    color_picker.value="#A0D568"
+}
+function blueFunction() {
+    color_picker.value="#4FC1E8"
+}
+function purpleFunction() {
+    color_picker.value="#AC92EB"
+}
+
+
+//#FFCEEE// :) :0 :( :.:.:.:.:.:.

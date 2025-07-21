@@ -5,18 +5,20 @@ body {
     /* display: flex;*/
     margin: auto;
     width: 75%;
-    background-color: #3990bf;
+    background-color: #b597f2;
     text-align: center;
 
     /* font-family: ; */
+
 }
 
 
 #canvas {
 
-    border: 1em solid #6abae6;
+    border: 1em solid #e7c1ff;
     height: 500 px;
     width: 900px;
+    margin-top: 2em;
     margin-bottom: 2em;
     background-color: black;
     /* display: flex; */
@@ -30,18 +32,44 @@ body {
 
 .jam {
     display: inline;
+    color: #FFFFFF;
+    font-size: 1.15em;
  }
 
+ button {
 
+    cursor: pointer;
+ }
+
+/***************************/
 .inputThingies {
     display: flex;
-    margin: auto
+    margin: auto;
+    width: 50%;
  }
 
+.startButton {
+    border-width: 1em;
+    border-color: #000000;
+    margin: 1em;
+}
 
+.colorButton {
+    border-width: 1em;
+    border-color: #000000;
+    margin: 1em;
 
- /*inputThingies
-    startButton
-    colorButton
-    volumeButton
-    */
+}
+
+.volumeButton {
+    border-width: 1em;
+    border-color: #000000;
+    margin: 1em;
+}
+
+/***************************/
+
+.rainbowButtons {
+    color: black;
+    
+}
