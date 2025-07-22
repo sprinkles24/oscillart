@@ -7,19 +7,22 @@ body {
     width: 75%;
     background-color: #b597f2;
     text-align: center;
+    color: black;
 
-    /* font-family: ; */
-
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
 }
 
 
 #canvas {
 
     border: 1em solid #e7c1ff;
-    height: 500 px;
+    height: 500px;
     width: 900px;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 0em;
     background-color: black;
     /* display: flex; */
 
@@ -32,20 +35,37 @@ body {
 
 .jam {
     display: inline;
-    color: #FFFFFF;
-    font-size: 1.15em;
+    font-size: 1.5em;
+    color: black;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 30;
+    font-style: normal;
+    margin-top: 1em;
  }
 
  button {
 
     cursor: pointer;
+
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
  }
 
 /***************************/
 .inputThingies {
     display: flex;
-    margin: auto;
-    width: 50%;
+    /* margin: auto; */
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    /* margin-top: 0em; */
+    width: 85%;
+    /* border-width: 1em;
+    border-color: #000000;
+    margin: 1em; */
+    
  }
 
 .startButton {
@@ -67,9 +87,58 @@ body {
     margin: 1em;
 }
 
+.recordingButton {
+    border-width: 1em;
+    border-color: #000000;
+    margin-top: 3em;
+    margin-left: 1em;
+
+}
+
 /***************************/
+
+#record {
+    background-color: #e7c1ff;
+    border: 0.5em, solid, black;
+    color: black;
+    padding: 1em;
+    text-align: center;
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 16px; */
+}
 
 .rainbowButtons {
     color: black;
+    border-style: solid;
     
+}
+
+
+h1 {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    margin-top:0.5em;
+    margin-bottom: 0em;
+}
+
+h2 {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.hack {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 0.25em;
 }

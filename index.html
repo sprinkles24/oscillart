@@ -5,19 +5,25 @@
 
     <link href="style.css" rel="stylesheet"/>
 
-    <title>My title</title>
+    <title>Shyla's Oscillart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-    
+
     <div id="container">
+
+
         <!--headings-->
         <h1>Shyla's Oscillart</h1>
         <h2>Play music and draw fun sine waves!</h2>
         <!--hack club credit-->
         <h3 class="jam">Made with Hack Club's </h3>
-        <a href="https://jams.hackclub.com/batch/oscillart/" target="_blank" class ="jam">Oscillart Jam</a>
-        <h3 class="jam">!</h3>
-
+        <a href="https://jams.hackclub.com/batch/oscillart/" target="_blank" class="jam">Oscillart Jam</a>
 
         <!--Canvas-->
         <canvas id="canvas"></canvas>
@@ -27,7 +33,7 @@
 
             <!--Start Button-->
             <div class="startButton">
-                <p>Notes: </p>
+                <p>Notes</p>
                 <input type="text" id="input">
                 <button id="submit" onclick="handle()">Start Playing</button>
             </div>
@@ -35,7 +41,7 @@
 
             <!--Color Picker-->
             <div class="colorButton">
-                <p>Color Picker</p>
+                <p>Colors</p>
                 <input type="color" id="color" value="#FFFFFF">
 
                 <button class="rainbowButtons" style="background-color:#ED5564" onclick="redFunction()">Red</button>
@@ -60,7 +66,17 @@
 
         </div> <!-- class="inputThingies"-->
 
+        <div>
+            <p class="hack">...psst! i've spent this long working on this website!</p>
+            <img src="https://hackatime-badge.hackclub.com/U08TYFNC9GC/oscillart">
 
+            <!--wakatime
+            git repo
+            personal site-->
+
+        </div>
+        
+        
 
 
     </div> <!--div id="container" -->
@@ -69,3 +85,5 @@
     <script src="main.js"></script>
 </body>
 </html>
+
+
