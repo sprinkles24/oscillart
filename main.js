@@ -37,7 +37,7 @@ function drawWave() {
 
 function line() { //draws line for sine wave
     var y = (height/2) + vol_slider.value * Math.sin(2 * (Math.PI) * freq * x * (0.5 * length));
-    ctx.strokeStyle = color_picker.value //MAKE IT A GRADIENT (PART 4 SECTION 1 (END))
+    ctx.strokeStyle = color_picker.value
     ctx.lineTo(x, y);
     ctx.stroke();
     x = x + 1;
@@ -192,5 +192,3 @@ function purpleFunction() {
     color_picker.value="#AC92EB"
 }
 
-
-//#FFCEEE// :) :0 :( :.:.:.:.:.:.

@@ -1,8 +1,6 @@
 
 
 body {
-
-    /* display: flex;*/
     margin: auto;
     width: 75%;
     background-color: #b597f2;
@@ -24,7 +22,6 @@ body {
     margin-top: 2em;
     margin-bottom: 0em;
     background-color: black;
-    /* display: flex; */
 
 }
 
@@ -58,15 +55,9 @@ body {
 /***************************/
 .inputThingies {
     display: flex;
-    /* margin: auto; */
     margin-left: 7.5%;
     margin-right: 7.5%;
-    /* margin-top: 0em; */
     width: 85%;
-    /* border-width: 1em;
-    border-color: #000000;
-    margin: 1em; */
-    
  }
 
 .startButton {
@@ -110,9 +101,6 @@ body {
     color: black;
     padding: 1em;
     text-align: center;
-    /* text-decoration: none; */
-    /* display: inline-block; */
-    /* font-size: 16px; */
 }
 
 .rainbowButtons {
@@ -152,7 +140,6 @@ h2 {
 
 hr {
     border: 0.1em solid #e7c1ff;
-    /* color:black; */
 
 }
 
@@ -163,7 +150,6 @@ hr {
 }
 
 .endWordsButtons {
-    /* border: 0.1em, solid, black; */
     padding: 0.1em;
     width: 98%;
     margin-left: 1%;
