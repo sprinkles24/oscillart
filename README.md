@@ -5,6 +5,12 @@ I followed [Hack Club's Oscillart Jam](https://jams.hackclub.com/batch/oscillart
 
 I made my version of Oscillart since I'm a beginner at web development and wanted to get more comfortable with creating and designing a website on my own, but still have some guidance when I got stuck. I also want to expand my web dev skills past just HTML and CSS, and Javascript seemed like the best next step!
 
+## Features
+You can play notes, change the color of the wave, change the volume (and therefore amplitude), and start and stop a recording of your wave that's saved as a .webm!
+
+
+![Video of a blue sine wave with increasing, decreasing, and then increasing amplitude, playing the notes CDEFGAB.](images/demo%20vid.webm)
+
 
 ## New Features
 
