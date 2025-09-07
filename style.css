@@ -28,11 +28,6 @@ body {
 
 }
 
-#container {
-    /* display: flex;
-    margin: auto; */
-}
-
 .jam {
     display: inline;
     font-size: 1.5em;
@@ -53,6 +48,12 @@ body {
     font-weight: 500;
     font-style: normal;
  }
+
+#color {
+    border-color: black;
+    border-width: 0.15em;
+    background-color: #e7c1ff;
+}
 
 /***************************/
 .inputThingies {
@@ -96,6 +97,12 @@ body {
 }
 
 /***************************/
+
+#submit {
+    background-color: #e7c1ff;
+    border: 0.18em, solid, black;
+
+}
 
 #record {
     background-color: #e7c1ff;
@@ -141,4 +148,30 @@ h2 {
     font-weight: 300;
     font-size: 1em;
     margin-bottom: 0.25em;
+}
+
+hr {
+    border: 0.1em solid #e7c1ff;
+    /* color:black; */
+
+}
+
+.endStuff {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.endWordsButtons {
+    /* border: 0.1em, solid, black; */
+    padding: 0.1em;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.smallButtons {
+    background-color: #e7c1ff;
+    border: 0.18em, solid, black;
+
 }
