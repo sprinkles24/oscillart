@@ -33,6 +33,5 @@ I had never used buttons before this project, but since they were included in th
 ## Skills Learnt
 Since I've never worked with Javascript before, and am relatively new to HTML and CSS, I struggled with the JS aspects and centering divs in CSS. I learned to set the width, margin-left, and margin-right of a div to all add to 100%, which helps center objects. I also learned about buttons, horizontal rule (hr), and align-items, which will definitely help with future projects!
 
-##### This was made for the [Athena Award](https://athena.hackclub.com/)! See my other Athena projects [here](https://athena.hackclub.com/projects/sprinkles24)!
 
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
